@@ -1,23 +1,29 @@
 <?php
-    include __DIR__ . "\src\auth.php";
+    include __DIR__ . "\src\auth_register.php";
     if(isset($_SESSION['alert'])){
         echo "<div class='alert alert-danger' role='alert'>
-                    Username atau Password Salah! </div>";
+                    Username sudah terdaftar! </div>";
+        unset($_SESSION['alert']);
+    } else if(isset($_SESSION['success'])){
+        echo "<div class='alert alert-success' role='alert'>
+                    Username sudah terdaftar! </div>";
         unset($_SESSION['alert']);
     }
 
-    if(is_user_login())
-        header('location:index.php');
- 
+    if(is_name_already($_POST['username']) == 1){
+        $_SESSION['alert'] = 1;
+        header('location:register.php');
+    }
+
     if(isset($_POST['username']) && isset($_POST['password']) && !is_user_login()){
         $username = $_POST['username'];
         $password = $_POST['password'];
-        if(login($username, $password)){
-            $_SESSION['username'] = $username;
-            header('location:index.php');
+        if(register($username, $password)){
+            $_SESSION['success'] = 1;
+            header('location:register.php');
         } else {
             $_SESSION['alert'] = 1;
-            header('location:login.php');
+            header('location:register.php');
         }
     }
 ?>
@@ -32,22 +38,22 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center mt-5" style="color: dodgerblue;">Login Todolist</h1>
+        <h1 class="text-center mt-5" style="color: dodgerblue;">Register Todolist</h1>
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="card" style="width: 30rem;">
                     <div class="card-body">
-                        <form action="login.php" method="POST">
+                        <form action="register.php" method="POST">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" name="username" class="form-control">
+                                <input type="text" name="username" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control">
+                                <input type="password" name="password" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Login</button>
-                            <button class="btn"><a href="register.php">Register</a></button>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button class="btn"><a href="register.php">Login</a></button>
                         </form>
                     </div>
                 </div>
