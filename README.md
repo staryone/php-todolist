@@ -42,15 +42,15 @@ Instruksi untuk menggunakan proyek ini setelah instalasi:
 
 ## Skema Database
 ### Tabel users
-- `id` (primary key) int 11
-- `username` (unique key) varchar 255
+- `id` int 11 (primary key) 
+- `username` varchar 255 (unique key)
 - `password` varchar 255
 
 ### Tabel todos
-- `id` (primary key) int 11
-- `username` (foreign key mengarah ke users.username) varchar 255
-- `note` (disinilah todo disimpan) varchar 255
-- `status` (untuk mengetahui apakah todo terchecklist atau tidak) int 11
+- `id` int 11 (primary key)
+- `username` varchar 255 (foreign key mengarah ke users.username)
+- `note` varchar 255 (disinilah todo disimpan)
+- `status` int 11 (untuk mengetahui apakah todo terchecklist atau tidak)
 
 ## Kontribusi
 Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori ini dan kirim pull request. Anda juga bisa membuka isu untuk melaporkan bug atau permintaan fitur baru.
