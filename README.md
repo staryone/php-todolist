@@ -59,4 +59,4 @@ Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori ini dan k
 Proyek ini dilisensikan di bawah lisensi MIT - lihat file [LICENSE](LICENSE) untuk detail lebih lanjut.
 
 ## Demo
-Anda dapat melihat demo proyek ini di [Coming Soon](#).
+Anda dapat melihat demo proyek ini di [DEMO (Soon Live)](http://todolist-php.rf.gd/).
