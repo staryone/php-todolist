@@ -65,7 +65,8 @@
                                 </div>
                                 <div>
                                     <a href="index.php?edit=<?php echo $todo['id']?>&todo=<?php echo $todo['note']?>">Edit</a>
-                                    <a style="color: red;" href="utils/delete.php?id=<?php echo $todo['id']?>">Delete</a>
+                                    <a style="color: red;" href="utils/delete.php?id=<?php echo $todo['id']?>" 
+                                    onclick="return confirm('Apakah yakin ingin menghapus todo ini?')">Delete</a>
                                 </div>
                             </li>
                             <?php endforeach; ?>
