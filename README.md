@@ -18,11 +18,13 @@ Proyek ini menggunakan PHP tanpa framework sebagai backend dan MySQL sebagai dat
 
 ## Instalasi
 Langkah-langkah untuk menginstal dan menjalankan proyek:
-1. Clone repositori: `git clone https://github.com/staryone/php-todolist.git`
-2. Masuk ke direktori proyek: `cd php-todolist`
-3. Buat database MySQL baru dan impor skema database (lihat bagian [Skema Database](#skema-database))
-4. Atur konfigurasi database di file `src/connection.php`
-5. Jalankan proyek di server lokal atau hosting.
+1. Pastikan `xampp` telah terinstall diperangkat
+2. Cari direktori `htdocs` dan buka file tersebut melalui terminal
+3. Clone repositori: `git clone https://github.com/staryone/php-todolist.git`
+4. Masuk ke direktori proyek: `cd php-todolist`
+5. Buat database MySQL baru dan impor skema database (lihat bagian [Skema Database](#skema-database))
+6. Atur konfigurasi database di file `src/connection.php`
+7. Jalankan proyek di server lokal atau hosting.
 
 ## Penggunaan
 Instruksi untuk menggunakan proyek ini setelah instalasi:
