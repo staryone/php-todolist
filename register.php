@@ -1,24 +1,26 @@
 <?php
     include __DIR__ . "\src\auth_register.php";
-    if(isset($_SESSION['alert'])){
-        echo "<div class='alert alert-danger' role='alert'>
+    if(isset($_SESSION['duplicate'])){
+        echo "<div class='alert alert-warning' role='alert'>
                     Username sudah terdaftar! </div>";
-        unset($_SESSION['alert']);
+        unset($_SESSION['duplicate']);
     } else if(isset($_SESSION['success'])){
         echo "<div class='alert alert-success' role='alert'>
-                    Username sudah terdaftar! </div>";
+                    Berhasil mendaftarkan user! </div>";
+        unset($_SESSION['success']);
+    } else if(isset($_SESSION['alert'])){
+        echo "<div class='alert alert-danger' role='alert'>
+                    Gagal mendaftarkan user! </div>";
         unset($_SESSION['alert']);
     }
 
-    if(is_name_already($_POST['username']) == 1){
-        $_SESSION['alert'] = 1;
-        header('location:register.php');
-    }
-
-    if(isset($_POST['username']) && isset($_POST['password']) && !is_user_login()){
+    if(isset($_POST['username']) && isset($_POST['password'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
-        if(register($username, $password)){
+        if(is_username_already($username) == 1){
+            $_SESSION['duplicate'] = 1;
+            header('location:register.php');
+        } else if(register($username, $password)){
             $_SESSION['success'] = 1;
             header('location:register.php');
         } else {
@@ -53,7 +55,7 @@
                                 <input type="password" name="password" class="form-control" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Register</button>
-                            <button class="btn"><a href="register.php">Login</a></button>
+                            <button class="btn"><a href="login.php">Login</a></button>
                         </form>
                     </div>
                 </div>
