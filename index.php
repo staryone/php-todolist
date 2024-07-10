@@ -34,10 +34,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="container mt-5">
+        <div class="container">
             <h2 class="text-center mt-5">Selamat datang, <?php echo ucwords($username);?></h1>
             <div class="d-flex flex-column justify-content-center align-items-center">
-                <div class="card" style="width: 40rem;">
+                <div class="card" style="width: 40rem; max-width:100%;">
                     <div class="card-body">
                         <form class="d-flex " action="<?php echo ($id_note!=-1) ? "utils/update.php" : "utils/insert.php"; ?>" method="POST">
                             <input type="hidden" name="id_note" value=<?php echo ($id_note!=-1) ? "$id_note" : ""; ?>>
@@ -46,7 +46,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="card mt-2" style="width: 40rem;">
+                <div class="card mt-2" style="width: 40rem; max-width:100%;">
                     <div class="card-body">
                         <h5>Todolist <?php echo ucwords($username) ?></h5>
                         <ul class="list-group">
