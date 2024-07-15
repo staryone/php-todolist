@@ -54,11 +54,5 @@ Instruksi untuk menggunakan proyek ini setelah instalasi:
 - `note` varchar 255 (disinilah todo disimpan)
 - `status` int 11 (untuk mengetahui apakah todo terchecklist atau tidak)
 
-## Kontribusi
-Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori ini dan kirim pull request. Anda juga bisa membuka isu untuk melaporkan bug atau permintaan fitur baru.
-
-## Lisensi
-Proyek ini dilisensikan di bawah lisensi MIT - lihat file [LICENSE](LICENSE) untuk detail lebih lanjut.
-
 ## Demo
 Anda dapat melihat demo proyek ini di [DEMO (Soon Live)](http://todolist-php.rf.gd/).
