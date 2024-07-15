@@ -1,4 +1,4 @@
-# Simple PHP Todo List
+# PHP Todolist
 
 ## Description
 This project is a simple todo list application built using PHP and MySQL as the backend and Bootstrap as the frontend. This project aims to enhance my PHP learning experience.
